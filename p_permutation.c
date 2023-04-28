@@ -62,7 +62,7 @@ t_boolean finaliser_permutation(t_permutation* ceci) {
 t_boolean debugger_permutation(t_permutation ceci) {
 	if (est_p_permutation_initialise()) {
 		for (int ite = 0; ite < size; ite++) {
-			printf("%d", ceci[size]);
+			printf("%d", ceci[ite]);
 			printf(", ");
 		}
 	}
@@ -118,11 +118,12 @@ t_boolean copier_permutation(t_permutation ceci, t_permutation cela){
 }
 t_boolean melanger_permutation(t_permutation ceci){
 	if (est_p_permutation_initialise()) {
-	for (int ite = 0;ite < size;ite++){
-		int a = aleatoire_entre_a_et_b(0, size);
-		int b = aleatoire_entre_a_et_b(0,size);
-		echanger_tableau(ceci, a, b);
-		return TRUE;}
+		for (int ite = 0;ite < size;ite++){
+			int a = aleatoire_entre_a_et_b(0, size);
+			int b = aleatoire_entre_a_et_b(0,size);
+			echanger_tableau(ceci, a, b);
+			return TRUE;
+		}
 	}
 	else{
 		return FALSE;

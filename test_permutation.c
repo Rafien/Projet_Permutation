@@ -70,8 +70,11 @@ int main(){
     debugger_permutation(ma_permutation_0);
     printf("AVANT melange variable\n");
     melanger_permutation(ma_permutation_0);
+    printf("fin melange\n");
     debugger_permutation(ma_permutation_0);
+    printf(" debugfin melange\n");
     tester_enumeration();
+    printf(" fin enum\n");
     tester_codage();
     printf("AVANT finalisation variable\n");
     finaliser_permutation(&ma_permutation_0);
