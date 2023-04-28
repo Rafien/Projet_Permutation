@@ -120,8 +120,7 @@ t_boolean melanger_permutation(t_permutation ceci){
 	if (est_p_permutation_initialise()) {
 		for (int ite = 0;ite < size;ite++){
 			int a = aleatoire_entre_a_et_b(0, size);
-			int b = aleatoire_entre_a_et_b(0,size);
-			echanger_tableau(ceci, a, b);
+			echanger_tableau(ceci, a, ite);
 			return TRUE;
 		}
 	}
