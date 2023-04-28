@@ -137,3 +137,31 @@ t_boolean est_inferieur_strict(t_permutation ceci, t_permutation cela){
 	return FALSE;
 
 }
+
+
+t_boolean suivante_permutation(t_permutation ceci) {
+	//check tranche décroissante
+	int indice1 = -1;
+	for (int i = size; i >= 0; i--) {
+		indice1 = i - 1;
+		if (ceci[i] > ceci[i - 1]) {
+			indice1 = i - 1;
+			break;
+		}
+		indice1 = -1;
+	}
+	if (indice1 == -1) {
+		return FALSE;
+	} else {
+		int indice2 = ceci[indice1];
+		for (int i = indice1; i < size; i++) {
+			if (ceci[i] < indice2) {
+				indice2 = ceci[i];
+			}
+		}
+		echanger_tableau(ceci, indice1, indice2);
+		croiser_tableau(ceci + indice1, indice2 - indice1);
+		return TRUE;
+	}
+
+}
