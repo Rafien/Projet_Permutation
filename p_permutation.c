@@ -140,7 +140,6 @@ t_boolean est_inferieur_strict(t_permutation ceci, t_permutation cela){
 
 
 t_boolean suivante_permutation(t_permutation ceci) {
-	//check tranche d�croissante
 	int indice1 = -1;
 	for (int i = size; i >= 0; i--) {
 		indice1 = i - 1;
@@ -172,12 +171,10 @@ t_boolean reciproque_permutation(t_permutation ceci, t_permutation cela) {
 	}
 }
 t_boolean copier_suivante_permutation(t_permutation ceci, t_permutation cela){
-	if (suivante_permutation(ceci)){
-		copier_tableau(ceci,cela,size);
-		return TRUE;
-	}
-	return FALSE;
+	copier_permutation(ceci, cela);
+	suivante_permutation(cela);
 }
+
 t_boolean code_point_fixe_permutation(t_permutation ceci, int point_fixe, t_permutation cela){
 	if(est_point_fixe_permutation(ceci,point_fixe)){
 	copier_tableau(ceci,cela,size);
