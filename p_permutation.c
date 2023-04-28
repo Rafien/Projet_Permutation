@@ -165,3 +165,9 @@ t_boolean suivante_permutation(t_permutation ceci) {
 	}
 
 }
+
+t_boolean reciproque_permutation(t_permutation ceci, t_permutation cela) {
+	for (int i = 0; i < size; i++) {
+		cela[ceci[i]] = i;
+	}
+}
