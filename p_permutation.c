@@ -140,7 +140,7 @@ t_boolean est_inferieur_strict(t_permutation ceci, t_permutation cela){
 
 
 t_boolean suivante_permutation(t_permutation ceci) {
-	//check tranche décroissante
+	//check tranche dï¿½croissante
 	int indice1 = -1;
 	for (int i = size; i >= 0; i--) {
 		indice1 = i - 1;
@@ -170,4 +170,32 @@ t_boolean reciproque_permutation(t_permutation ceci, t_permutation cela) {
 	for (int i = 0; i < size; i++) {
 		cela[ceci[i]] = i;
 	}
+}
+t_boolean copier_suivante_permutation(t_permutation ceci, t_permutation cela){
+	if (suivante_permutation(ceci)){
+		copier_tableau(ceci,cela,size);
+		return TRUE;
+	}
+	return FALSE;
+}
+t_boolean code_point_fixe_permutation(t_permutation ceci, int point_fixe, t_permutation cela){
+	if(est_point_fixe_permutation(ceci,point_fixe)){
+	copier_tableau(ceci,cela,size);
+		for (int ite = point_fixe; ite >= 0; ite--){
+			echanger_tableau(cela,ite,ite-1);
+			
+		}
+		return TRUE;
+	}
+	return FALSE;
+}
+t_boolean decode_point_fixe_permutation(t_permutation ceci, t_permutation cela, int* point_fixe){
+	if(est_point_fixe_permutation(ceci,point_fixe)){
+		copier_tableau(ceci,cela,size);
+		for (int ite = 0; ite >= *point_fixe ; ite++){
+			echanger_tableau(cela,ite,ite+1);
+		}
+		return TRUE;
+	}
+	return FALSE;
 }
