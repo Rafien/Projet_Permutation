@@ -26,6 +26,7 @@
  */
 typedef int* t_permutation;
 #define NON_INITIALISE_PERMUTATION NULL
+
 /**
  * @brief Cette fonction doit être utilisée une seule fois dans votre programme pour définir le nombre d'objets concernés dans la permutation.
  * 
@@ -114,7 +115,7 @@ t_boolean est_indice_valide(int position);
  * @param ceci : la permutation à mélanger
  * @return t_boolean : VRAI si la bibliothèque a été initialisée ; FAUX sinon.
  */
-t_boolean melanger_permutation(t_permutation ceci); // a voir avec raf
+t_boolean melanger_permutation(t_permutation ceci);
 
 /**
  * @brief construire dans <cela> la réciproque de <ceci>.
@@ -123,7 +124,7 @@ t_boolean melanger_permutation(t_permutation ceci); // a voir avec raf
  * @param cela : une permutation (initialiser) qui pourra accueillir la réciproque de ceci.
  * @return t_boolean : VRAI si la bibliothèque a été initialisée ET si on a réussi à construire la permutation réciproque ; FAUX sinon.
  */
-t_boolean reciproque_permutation(t_permutation ceci, t_permutation cela); //Aled
+t_boolean reciproque_permutation(t_permutation ceci, t_permutation cela);
 
 /**
  * @brief retourne VRAI si la bibliothèque a été initialisée ET si <ceci> est une permutation valide;
@@ -143,7 +144,7 @@ t_boolean est_permutation_valide(t_permutation ceci);
  * @return t_boolean : VRAI si la bibliothèque a été initialisée ET si <ceci> est une permutation valide;
  * FAUX sinon.
  */
-t_boolean est_inferieur_strict(t_permutation ceci, t_permutation cela);//avoir avec raf
+t_boolean est_inferieur_strict(t_permutation ceci, t_permutation cela);
 
 /**
  * @brief retourne VRAI si <ceci> possède un point fixe en <position>,
@@ -172,7 +173,7 @@ int nb_point_fixe(t_permutation ceci);
  * @return t_boolean : VRAI si la bibliothèque a été initialisée ET si <ceci> possède une permutation suivante;
  * FAUX sinon.
  */
-t_boolean suivante_permutation(t_permutation ceci); // a voir avec raf
+t_boolean suivante_permutation(t_permutation ceci);
 
 /**
  * @brief copie dans <cela> la permutation qui arrive après <ceci>.
